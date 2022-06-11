@@ -1,0 +1,51 @@
+<mat-grid-list
+  [cols]="1"
+  rowHeight="2:1"
+  class="banner-content"
+  (window:resize)="onResize($event)"
+>
+  <mat-grid-tile>
+    <mat-card class="card-container">
+      <mat-card-content>
+        <mat-card-title class="title-center">Thor</mat-card-title>
+        <form [formGroup]="loginFormControl">
+          <mat-form-field appearance="fill" style="width: 300px">
+            <mat-label class="title-left">Usuario:</mat-label>
+            <input matInput formControlName="user" class="title-left" />
+          </mat-form-field>
+          <br />
+          <mat-form-field appearance="fill" style="width: 300px; height: 50px">
+            <mat-label class="title-left">Contraseña:</mat-label>
+            <input
+              matInput
+              formControlName="pass"
+              class="title-left"
+              type="password"
+            />
+          </mat-form-field>
+          <mat-grid-list cols="1" rowHeight="4:0.7">
+            <mat-grid-tile
+              ><button
+                mat-raised-button
+                color="primary"
+                (click)="login()"
+              >
+                Ingresar
+              </button></mat-grid-tile
+            >
+            <mat-grid-tile
+              ><a href="http://www.google.com" mat-menu-item
+                >Olvido contraseña</a
+              ></mat-grid-tile
+            >
+            <mat-grid-tile
+              ><a href="http://www.google.com" mat-menu-item
+                >Registrese</a
+              ></mat-grid-tile
+            >
+          </mat-grid-list>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
